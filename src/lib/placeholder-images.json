@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-family",
+      "description": "A happy Indian family, representing the citizens the app aims to help.",
+      "imageUrl": "https://images.unsplash.com/photo-1589169011402-8b2cbd1ee593?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGluZGlhbiUyMGZhbWlseXxlbnwwfHx8fDE3Njg5MjE1OTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy indian family"
+    },
+    {
+      "id": "student-scholarship",
+      "description": "A young student studying, representing a scholarship scheme.",
+      "imageUrl": "https://images.unsplash.com/photo-1514178494750-80c2ed3def1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxpbmRpYW4lMjBzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MHx8fHwxNzY4OTIxNTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian student studying"
+    },
+    {
+      "id": "old-age-pension",
+      "description": "An elderly Indian couple smiling, representing a pension scheme.",
+      "imageUrl": "https://images.unsplash.com/photo-1656634195486-4f94c0617963?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlbGRlcmx5JTIwaW5kaWFuJTIwY291cGxlfGVufDB8fHx8MTc2ODkyMTU5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "elderly indian couple"
+    },
+    {
+      "id": "farmer-subsidy",
+      "description": "An Indian farmer in a field, representing an agricultural subsidy.",
+      "imageUrl": "https://images.unsplash.com/photo-1620901433789-1d2f85a93653?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBmYXJtZXJ8ZW58MHx8fHwxNzY4OTIxNTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian farmer"
+    },
+    {
+      "id": "women-welfare",
+      "description": "An Indian mother holding her child, representing a women's welfare scheme.",
+      "imageUrl": "https://images.unsplash.com/photo-1635684974801-41e465fe2a3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5kaWFuJTIwbW90aGVyJTIwY2hpbGR8ZW58MHx8fHwxNzY4OTIxNTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian mother child"
+    },
+    {
+      "id": "housing-assistance",
+      "description": "A set of keys in front of a new house, representing a housing scheme.",
+      "imageUrl": "https://images.unsplash.com/photo-1742318592061-15c5f19e1e47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob3VzZSUyMGtleXN8ZW58MHx8fHwxNzY4OTIxNTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "house keys"
+    }
+  ]
 }
