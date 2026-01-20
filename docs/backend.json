@@ -53,19 +53,13 @@
         "id",
         "firstName",
         "lastName",
-        "email",
-        "dateOfBirth",
-        "address",
-        "state",
-        "occupation",
-        "category"
+        "email"
       ]
     }
   },
   "auth": {
     "providers": [
-      "password",
-      "anonymous"
+      "password"
     ]
   },
   "firestore": {
