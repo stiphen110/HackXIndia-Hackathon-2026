@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Info } from 'lucide-react';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
 
 function Results({searchParams}: {searchParams: UserAnswers}) {
     const answers: UserAnswers = {
@@ -60,28 +61,30 @@ function Results({searchParams}: {searchParams: UserAnswers}) {
 
 
 export default function SchemesPage({ searchParams }: { searchParams: UserAnswers }) {
-    if (Object.keys(searchParams).length === 0) {
-        return (
-            <div className="container py-12 text-center">
-                 <Alert variant="destructive" className="max-w-md mx-auto">
-                    <Info className="h-4 w-4" />
-                    <AlertTitle>No Information Provided</AlertTitle>
-                    <AlertDescription>
-                        Please complete the eligibility check to see your personalized schemes.
-                    </AlertDescription>
-                </Alert>
-                <Button asChild className="mt-6">
-                    <Link href="/onboarding">Start Eligibility Check</Link>
-                </Button>
-            </div>
-        );
-    }
+    const hasParams = Object.keys(searchParams).length > 0;
     
     return (
-        <div className="container py-12">
-            <Suspense fallback={<div>Loading results...</div>}>
-                <Results searchParams={searchParams} />
-            </Suspense>
-        </div>
+        <ProtectedRoute>
+            <div className="container py-12">
+                {hasParams ? (
+                     <Suspense fallback={<div>Loading results...</div>}>
+                        <Results searchParams={searchParams} />
+                    </Suspense>
+                ) : (
+                    <div className="text-center">
+                        <Alert variant="destructive" className="max-w-md mx-auto">
+                            <Info className="h-4 w-4" />
+                            <AlertTitle>No Information Provided</AlertTitle>
+                            <AlertDescription>
+                                Please complete the eligibility check to see your personalized schemes.
+                            </AlertDescription>
+                        </Alert>
+                        <Button asChild className="mt-6">
+                            <Link href="/onboarding">Start Eligibility Check</Link>
+                        </Button>
+                    </div>
+                )}
+            </div>
+        </ProtectedRoute>
     );
 }

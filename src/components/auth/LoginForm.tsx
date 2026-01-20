@@ -14,7 +14,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { useAuth } from '@/firebase';
@@ -30,6 +30,7 @@ type LoginFormValues = z.infer<typeof formSchema>;
 export default function LoginForm() {
   const auth = useAuth();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -49,7 +50,8 @@ export default function LoginForm() {
         title: 'Login Successful',
         description: "Welcome back!",
       });
-      router.push('/');
+      const redirectUrl = searchParams.get('redirect') || '/';
+      router.push(redirectUrl);
     } catch (error: any) {
       toast({
         variant: 'destructive',
