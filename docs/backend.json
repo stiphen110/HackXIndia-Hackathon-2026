@@ -1,0 +1,92 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the Suvidha Sahayak platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user entity."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "User's first name."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "User's last name."
+        },
+        "email": {
+          "type": "string",
+          "description": "User's email address.",
+          "format": "email"
+        },
+        "mobileNumber": {
+          "type": "string",
+          "description": "User's mobile number."
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "description": "User's date of birth.",
+          "format": "date-time"
+        },
+        "address": {
+          "type": "string",
+          "description": "User's address."
+        },
+        "state": {
+          "type": "string",
+          "description": "User's state of residence."
+        },
+        "occupation": {
+          "type": "string",
+          "description": "User's occupation."
+        },
+        "category": {
+          "type": "string",
+          "description": "User's category (e.g., General, OBC, SC, ST)."
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "email",
+        "dateOfBirth",
+        "address",
+        "state",
+        "occupation",
+        "category"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user data. Path-based ownership ensures only the authenticated user can access their own data.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user, matching the Firebase Authentication UID."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to manage user data for the Suvidha Sahayak platform. It prioritizes authorization independence and simplifies security rules, focusing on clarity and debuggability. User data is stored under `/users/{userId}`. This structure avoids hierarchical authorization dependencies by storing all necessary authorization data directly within the user document itself, eliminating the need for `get()` calls in security rules. This structure supports secure `list` operations by segregating user data into individual user documents and ensuring that each document has a homogeneous security posture.\n\nThe structure adheres to the principle of Authorization Independence by avoiding reliance on parent document data for authorization. Each user's data is self-contained, simplifying security rules and ensuring atomic operations.\n\nThe path-based ownership model (`/users/{userId}`) is used for simplicity, security, and efficiency. The path structure follows the format `/users/{userId}` to represent the relationship between the user and their data."
+  }
+}
