@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { AccessibilityProvider } from '@/contexts/AccessibilityContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/chatbot/Chatbot';
@@ -27,17 +26,15 @@ export default function RootLayout({
       </head>
       <body className={cn("font-body antialiased")}>
         <FirebaseClientProvider>
-          <AccessibilityProvider>
-            <div className="flex min-h-screen flex-col">
-              <Header />
-              <main className="flex-1">
-                {children}
-              </main>
-              <Footer />
-            </div>
-            <Chatbot />
-            <Toaster />
-          </AccessibilityProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <Chatbot />
+          <Toaster />
         </FirebaseClientProvider>
       </body>
     </html>
