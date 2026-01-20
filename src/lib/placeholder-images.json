@@ -26,9 +26,9 @@
     },
     {
       "id": "women-welfare",
-      "description": "An Indian mother holding her child, representing a women's welfare scheme.",
-      "imageUrl": "https://images.unsplash.com/photo-1635684974801-41e465fe2a3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aW5kaWFuJTIwbW90aGVyJTIwY2hpbGR8ZW58MHx8fHwxNzY4OTIxNTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian mother child"
+      "description": "An LPG gas cylinder, representing the Ujjwala Yojana for clean cooking fuel.",
+      "imageUrl": "https://images.unsplash.com/photo-1758777151107-b4573745d6c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnYXMlMjBjeWxpbmRlcnxlbnwwfHx8fDE3Njg5Mjc4NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gas cylinder"
     },
     {
       "id": "housing-assistance",
