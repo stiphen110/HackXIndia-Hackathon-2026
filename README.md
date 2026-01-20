@@ -1,4 +1,4 @@
-#HackXIndia
+##HackXIndia
 ### Join 1000+ developers, designers and founders from all over India for a 24-hour non-stop hackathon that turns ideas into deployable products.
 
 --- 
